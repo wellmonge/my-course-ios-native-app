@@ -26,4 +26,18 @@
 }
 
 
+- (IBAction)Services:(id)sender {
+}
+
+- (IBAction)Portfolio:(id)sender {
+}
+
+- (IBAction)About:(id)sender {
+}
+
+- (IBAction)Contact:(id)sender {
+}
+
+- (IBAction)Social:(id)sender {
+}
 @end
