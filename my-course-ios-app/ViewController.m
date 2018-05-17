@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.AboutButton.layer.cornerRadius = 5;
+    self.PortfolioButton.layer.cornerRadius = 5;
+    self.ServiceButton.layer.cornerRadius = 5;
+    self.ContactButton.layer.cornerRadius = 5;
+    self.SocialButton.layer.cornerRadius = 5;
+    
 }
 
 
@@ -27,17 +34,24 @@
 
 
 - (IBAction)Services:(id)sender {
+    [(UITabBarController *) self.tabBarController setSelectedIndex:2];
 }
 
 - (IBAction)Portfolio:(id)sender {
+    [(UITabBarController *) self.tabBarController setSelectedIndex:3];
 }
 
 - (IBAction)About:(id)sender {
+    
+    [(UITabBarController *) self.tabBarController setSelectedIndex:1];
 }
 
 - (IBAction)Contact:(id)sender {
+    
+    [(UITabBarController *) self.tabBarController setSelectedIndex:4];
 }
 
 - (IBAction)Social:(id)sender {
 }
 @end
+
