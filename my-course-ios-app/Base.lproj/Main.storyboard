@@ -6,12 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Courier.ttc">
             <string>Courier</string>
+        </array>
+        <array key="KohinoorTelugu.ttc">
+            <string>KohinoorTelugu-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -132,19 +136,41 @@
         <!--Services-->
         <scene sceneID="obQ-65-y2O">
             <objects>
-                <tableViewController id="mJQ-Oc-MdE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2So-7x-FuL">
+                <tableViewController id="mJQ-Oc-MdE" customClass="ServiceTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2So-7x-FuL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yDw-CB-ycl">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="117" id="yDw-CB-ycl" customClass="ServiceTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDw-CB-ycl" id="dHd-KQ-cvd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDw-CB-ycl" id="dHd-KQ-cvd" customClass="ServiceTableViewCell">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="BZV-b5-0kw">
+                                            <rect key="frame" x="0.0" y="-16" width="414" height="145"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service 1" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NZl-PQ-dXp">
+                                            <rect key="frame" x="20" y="11" width="374" height="95"/>
+                                            <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="24"/>
+                                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NZl-PQ-dXp" firstAttribute="leading" secondItem="dHd-KQ-cvd" secondAttribute="leadingMargin" id="4JM-td-PdH"/>
+                                        <constraint firstItem="NZl-PQ-dXp" firstAttribute="top" secondItem="dHd-KQ-cvd" secondAttribute="topMargin" id="tPL-UD-Dgj"/>
+                                        <constraint firstItem="NZl-PQ-dXp" firstAttribute="bottom" secondItem="dHd-KQ-cvd" secondAttribute="bottomMargin" id="tyi-3o-7fG"/>
+                                        <constraint firstItem="NZl-PQ-dXp" firstAttribute="trailing" secondItem="dHd-KQ-cvd" secondAttribute="trailingMargin" id="ytC-s9-oQf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellLabel" destination="NZl-PQ-dXp" id="p1S-Tj-F0h"/>
+                                    <segue destination="JR4-TO-mjg" kind="show" id="lDo-cZ-Su1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -156,7 +182,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ro3-pr-ejZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="881"/>
+            <point key="canvasLocation" x="1576.8115942028987" y="880.43478260869574"/>
+        </scene>
+        <!--Services View Controller-->
+        <scene sceneID="Pwi-oM-qRV">
+            <objects>
+                <viewController id="JR4-TO-mjg" customClass="ServicesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gng-Mu-ahG" customClass="ServiceTableViewCell">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="12h-cR-GPw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFr-Sh-wjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362" y="880"/>
         </scene>
         <!--Portfolio-->
         <scene sceneID="tYg-Rf-SsT">
@@ -172,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WS-SO-Pam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3191" y="881"/>
+            <point key="canvasLocation" x="3819" y="882"/>
         </scene>
         <!--Contact-->
         <scene sceneID="wbT-sF-SZg">
@@ -302,7 +343,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jp-Iv-uJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="880"/>
+            <point key="canvasLocation" x="3070" y="881"/>
         </scene>
         <!--Services-->
         <scene sceneID="thv-2U-RZj">

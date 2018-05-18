@@ -16,6 +16,9 @@
 		4BC5E3DD20A8FDE2009A63AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3DC20A8FDE2009A63AD /* main.m */; };
 		4BC5E3E720A8FDE2009A63AD /* my_course_ios_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3E620A8FDE2009A63AD /* my_course_ios_appTests.m */; };
 		4BC5E3F220A8FDE2009A63AD /* my_course_ios_appUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3F120A8FDE2009A63AD /* my_course_ios_appUITests.m */; };
+		4BE79ED020AE3B4700568274 /* ServiceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE79ECF20AE3B4700568274 /* ServiceTableViewController.m */; };
+		4BE79ED320AE3B7700568274 /* ServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE79ED220AE3B7700568274 /* ServiceTableViewCell.m */; };
+		4BE79ED620AE3BAA00568274 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE79ED520AE3BAA00568274 /* ServicesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		4BC5E3ED20A8FDE2009A63AD /* my-course-ios-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "my-course-ios-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC5E3F120A8FDE2009A63AD /* my_course_ios_appUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = my_course_ios_appUITests.m; sourceTree = "<group>"; };
 		4BC5E3F320A8FDE2009A63AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BE79ECE20AE3B4700568274 /* ServiceTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewController.h; sourceTree = "<group>"; };
+		4BE79ECF20AE3B4700568274 /* ServiceTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceTableViewController.m; sourceTree = "<group>"; };
+		4BE79ED120AE3B7700568274 /* ServiceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewCell.h; sourceTree = "<group>"; };
+		4BE79ED220AE3B7700568274 /* ServiceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceTableViewCell.m; sourceTree = "<group>"; };
+		4BE79ED420AE3BAA00568274 /* ServicesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServicesViewController.h; sourceTree = "<group>"; };
+		4BE79ED520AE3BAA00568274 /* ServicesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,7 @@
 		4BC5E3C920A8FDE2009A63AD /* my-course-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				4BE3AB2C20AD067D000F06AD /* Services */,
 				4BC5E3CA20A8FDE2009A63AD /* AppDelegate.h */,
 				4BC5E3CB20A8FDE2009A63AD /* AppDelegate.m */,
 				4BC5E3CD20A8FDE2009A63AD /* ViewController.h */,
@@ -133,6 +143,20 @@
 				4BC5E3F320A8FDE2009A63AD /* Info.plist */,
 			);
 			path = "my-course-ios-appUITests";
+			sourceTree = "<group>";
+		};
+		4BE3AB2C20AD067D000F06AD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4BE79ECE20AE3B4700568274 /* ServiceTableViewController.h */,
+				4BE79ECF20AE3B4700568274 /* ServiceTableViewController.m */,
+				4BE79ED120AE3B7700568274 /* ServiceTableViewCell.h */,
+				4BE79ED220AE3B7700568274 /* ServiceTableViewCell.m */,
+				4BE79ED420AE3BAA00568274 /* ServicesViewController.h */,
+				4BE79ED520AE3BAA00568274 /* ServicesViewController.m */,
+			);
+			name = Services;
+			path = "New Group/Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE79ED620AE3BAA00568274 /* ServicesViewController.m in Sources */,
 				4BC5E3CF20A8FDE2009A63AD /* ViewController.m in Sources */,
 				4BC5E3D520A8FDE2009A63AD /* my_course_ios_app.xcdatamodeld in Sources */,
 				4BC5E3DD20A8FDE2009A63AD /* main.m in Sources */,
 				4BC5E3CC20A8FDE2009A63AD /* AppDelegate.m in Sources */,
+				4BE79ED020AE3B4700568274 /* ServiceTableViewController.m in Sources */,
+				4BE79ED320AE3B7700568274 /* ServiceTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
