@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ServicesViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
+@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
+
+@property(strong, nonatomic) NSString *detail;
 
 @end

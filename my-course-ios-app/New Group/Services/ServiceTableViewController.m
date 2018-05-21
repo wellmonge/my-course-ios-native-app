@@ -8,6 +8,7 @@
 
 #import "ServiceTableViewController.h"
 #import "ServiceTableViewCell.h"
+#import "ServicesViewController.h"
 
 @interface ServiceTableViewController ()
 
@@ -20,7 +21,9 @@
     
     title = @[@"Service 1",@"Service 2",@"Service 3",@"Service 4",@"Service 5",];
     
-    self.tableView.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
+    self.tableView.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];	
+    
+    [[self navigationItem] setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -87,14 +90,20 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([[segue  identifier] isEqualToString:@"showDetail"]){
+        ServicesViewController *detailView = [segue destinationViewController];
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        int row = (int)[myIndexPath row];
+        detailView = title[row	];
+    }
 }
-*/
+
 
 @end
