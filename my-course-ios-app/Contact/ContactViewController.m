@@ -37,6 +37,11 @@
     
     [self.mapView addAnnotation:ann];
     
+    self.directions.layer.cornerRadius =5;
+    self.callUs.layer.cornerRadius =5;
+    self.emailUs.layer.cornerRadius =5;
+    self.socialLinks.layer.cornerRadius =5;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,8 +60,11 @@
 */
 
 - (IBAction)DirectionAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://maps.apple.com/maps?daddr=-26.897206,-49.0636131"] options:@{} completionHandler:nil];
+    
 }
 
 - (IBAction)CallUsAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"TEL:1293904959"] options:@{} completionHandler:nil];
 }
 @end
