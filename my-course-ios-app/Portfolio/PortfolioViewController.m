@@ -54,6 +54,19 @@
     self.Label.text = [NSString stringWithFormat:@"%i/5",imageInt];
     
     self.ImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"Image%i.jpg",imageInt]];
+
+    if (imageInt == 1){
+        self.BackButton.enabled = NO;
+        self.BackButton.alpha = 0.5;
+    }else if (imageInt == 5){
+        self.NextButton.enabled = NO;
+        self.NextButton.alpha = 0.5;
+    }else {
+        self.BackButton.enabled = YES;
+        self.BackButton.alpha = 1.0;
+        self.NextButton.enabled = YES;
+        self.NextButton.alpha = 1.0;
+    }
 }
 
 

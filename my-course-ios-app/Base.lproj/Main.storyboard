@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O4I-EE-LCP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O4I-EE-LCP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -255,7 +255,7 @@
                                             <action selector="BackAction:" destination="lDw-NT-fkl" eventType="touchUpInside" id="JUU-S6-lgC"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFg-4L-TLL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFg-4L-TLL">
                                         <rect key="frame" x="111.5" y="0.0" width="112" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -307,18 +307,104 @@
         <!--Contact-->
         <scene sceneID="wbT-sF-SZg">
             <objects>
-                <viewController id="GyI-Vi-3SS" sceneMemberID="viewController">
+                <viewController id="GyI-Vi-3SS" customClass="ContactViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3t-CM-dRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-Do-Bwd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mQ0-Rv-GQl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="263"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7CI-C8-U5C">
+                                <rect key="frame" x="20" y="271" width="335" height="263"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua Carlos Rischibieter, Blumenau, Brasil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="NT3-XX-jRd">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="48.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp0-pk-dIU">
+                                        <rect key="frame" x="0.0" y="53.5" width="335" height="48.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Directions">
+                                            <color key="titleColor" red="0.024256381970691483" green="0.20966658222571363" blue="0.60279711787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="DirectionAction:" destination="GyI-Vi-3SS" eventType="touchUpInside" id="6Zx-tp-k2c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwk-s4-Dm7">
+                                        <rect key="frame" x="0.0" y="107" width="335" height="49"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Call Us">
+                                            <color key="titleColor" red="0.024256381970691483" green="0.20966658222571363" blue="0.60279711787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CallUsAction:" destination="GyI-Vi-3SS" eventType="touchUpInside" id="fz7-eq-dn8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uB-o6-apv">
+                                        <rect key="frame" x="0.0" y="161" width="335" height="48.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="E-mail Us">
+                                            <color key="titleColor" red="0.024256381970691483" green="0.20966658222571363" blue="0.60279711787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-L6-8HF">
+                                        <rect key="frame" x="0.0" y="214.5" width="335" height="48.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Social Links">
+                                            <color key="titleColor" red="0.024256381970691483" green="0.20966658222571363" blue="0.60279711787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7CI-C8-U5C" firstAttribute="leading" secondItem="r3t-CM-dRe" secondAttribute="leading" constant="20" id="1hj-Ys-xc8"/>
+                            <constraint firstItem="7CI-C8-U5C" firstAttribute="top" secondItem="mQ0-Rv-GQl" secondAttribute="bottom" constant="8" id="4vi-pS-BQe"/>
+                            <constraint firstAttribute="bottom" secondItem="7CI-C8-U5C" secondAttribute="bottom" constant="20" id="8m6-aN-qkh"/>
+                            <constraint firstItem="mQ0-Rv-GQl" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" id="Cw2-T4-Xcd"/>
+                            <constraint firstItem="7CI-C8-U5C" firstAttribute="top" secondItem="mQ0-Rv-GQl" secondAttribute="bottom" constant="8" id="D1i-PW-ZrF"/>
+                            <constraint firstItem="mQ0-Rv-GQl" firstAttribute="top" secondItem="eAu-83-2zP" secondAttribute="top" id="Hyb-OZ-N4C"/>
+                            <constraint firstItem="mQ0-Rv-GQl" firstAttribute="trailing" secondItem="eAu-83-2zP" secondAttribute="trailing" id="IRa-kw-6c8"/>
+                            <constraint firstItem="q3P-Do-Bwd" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" id="MK4-bZ-amJ"/>
+                            <constraint firstAttribute="trailing" secondItem="7CI-C8-U5C" secondAttribute="trailing" constant="-24" id="W5t-u0-0Md"/>
+                            <constraint firstItem="q3P-Do-Bwd" firstAttribute="bottom" secondItem="eAu-83-2zP" secondAttribute="bottom" id="WGm-Hz-LJy"/>
+                            <constraint firstAttribute="trailing" secondItem="7CI-C8-U5C" secondAttribute="trailing" constant="20" id="WgD-86-pq3"/>
+                            <constraint firstItem="q3P-Do-Bwd" firstAttribute="top" secondItem="eAu-83-2zP" secondAttribute="top" id="Xy2-on-RdZ"/>
+                            <constraint firstItem="7CI-C8-U5C" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" constant="16" id="jzZ-QI-nmY"/>
+                            <constraint firstItem="mQ0-Rv-GQl" firstAttribute="trailing" secondItem="eAu-83-2zP" secondAttribute="trailing" id="kDG-jQ-abf"/>
+                            <constraint firstItem="eAu-83-2zP" firstAttribute="bottom" secondItem="7CI-C8-U5C" secondAttribute="bottom" constant="138" id="lI3-Yh-7tm"/>
+                            <constraint firstItem="q3P-Do-Bwd" firstAttribute="trailing" secondItem="eAu-83-2zP" secondAttribute="trailing" id="oaF-fw-rpC"/>
+                            <constraint firstItem="mQ0-Rv-GQl" firstAttribute="top" secondItem="eAu-83-2zP" secondAttribute="top" id="smA-dU-Xdq"/>
+                            <constraint firstItem="mQ0-Rv-GQl" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" id="ycQ-oT-8Zs"/>
+                            <constraint firstItem="7CI-C8-U5C" firstAttribute="height" secondItem="mQ0-Rv-GQl" secondAttribute="height" id="zdt-rg-Q9K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eAu-83-2zP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contact" id="fkV-jk-fiW"/>
+                    <connections>
+                        <outlet property="callUs" destination="pwk-s4-Dm7" id="9Ij-fS-ULy"/>
+                        <outlet property="directions" destination="lp0-pk-dIU" id="PuK-vN-6oa"/>
+                        <outlet property="emailUs" destination="4uB-o6-apv" id="Ayx-Pr-prp"/>
+                        <outlet property="label" destination="NT3-XX-jRd" id="rCw-6L-qde"/>
+                        <outlet property="mapView" destination="mQ0-Rv-GQl" id="eog-fn-SYv"/>
+                        <outlet property="socialLinks" destination="h6z-L6-8HF" id="9l4-rG-ZAm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNQ-S9-uNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="-593"/>
+            <point key="canvasLocation" x="1576.8" y="-593.25337331334333"/>
         </scene>
         <!--About Us-->
         <scene sceneID="TiZ-hl-zAk">

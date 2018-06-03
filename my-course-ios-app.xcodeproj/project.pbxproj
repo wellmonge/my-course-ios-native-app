@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1527B82220C363AB0081255C /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1527B82120C363AB0081255C /* ContactViewController.m */; };
+		1527B82520C365160081255C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1527B82420C365160081255C /* MapKit.framework */; };
 		4B59049920B4E17F00CB942D /* PortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B59049820B4E17F00CB942D /* PortfolioViewController.m */; };
 		4BC5E3CC20A8FDE2009A63AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3CB20A8FDE2009A63AD /* AppDelegate.m */; };
 		4BC5E3CF20A8FDE2009A63AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3CE20A8FDE2009A63AD /* ViewController.m */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1527B82020C363AB0081255C /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		1527B82120C363AB0081255C /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		1527B82420C365160081255C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4B59049720B4E17F00CB942D /* PortfolioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PortfolioViewController.h; sourceTree = "<group>"; };
 		4B59049820B4E17F00CB942D /* PortfolioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortfolioViewController.m; sourceTree = "<group>"; };
 		4BC5E3C720A8FDE2009A63AD /* my-course-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-course-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1527B82520C365160081255C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1527B81F20C363440081255C /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				1527B82020C363AB0081255C /* ContactViewController.h */,
+				1527B82120C363AB0081255C /* ContactViewController.m */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		1527B82320C365160081255C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1527B82420C365160081255C /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B59049620B4E0BC00CB942D /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +131,7 @@
 				4BC5E3E520A8FDE2009A63AD /* my-course-ios-appTests */,
 				4BC5E3F020A8FDE2009A63AD /* my-course-ios-appUITests */,
 				4BC5E3C820A8FDE2009A63AD /* Products */,
+				1527B82320C365160081255C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +148,7 @@
 		4BC5E3C920A8FDE2009A63AD /* my-course-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				1527B81F20C363440081255C /* Contact */,
 				4B59049620B4E0BC00CB942D /* Portfolio */,
 				4BE3AB2C20AD067D000F06AD /* Services */,
 				4BC5E3CA20A8FDE2009A63AD /* AppDelegate.h */,
@@ -240,6 +265,11 @@
 					4BC5E3C620A8FDE2009A63AD = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4BC5E3E120A8FDE2009A63AD = {
 						CreatedOnToolsVersion = 9.1;
@@ -309,6 +339,7 @@
 				4B59049920B4E17F00CB942D /* PortfolioViewController.m in Sources */,
 				4BC5E3CF20A8FDE2009A63AD /* ViewController.m in Sources */,
 				4BC5E3D520A8FDE2009A63AD /* my_course_ios_app.xcdatamodeld in Sources */,
+				1527B82220C363AB0081255C /* ContactViewController.m in Sources */,
 				4BC5E3DD20A8FDE2009A63AD /* main.m in Sources */,
 				4BC5E3CC20A8FDE2009A63AD /* AppDelegate.m in Sources */,
 				4BE79ED020AE3B4700568274 /* ServiceTableViewController.m in Sources */,
