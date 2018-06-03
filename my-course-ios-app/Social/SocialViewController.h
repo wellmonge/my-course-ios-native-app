@@ -15,6 +15,6 @@
 }
 @property (strong, nonatomic) NSString *detail;
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activity;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actInd;
 
 @end

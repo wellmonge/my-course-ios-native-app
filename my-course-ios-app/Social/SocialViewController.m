@@ -34,13 +34,16 @@
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com"]]];
     }
     
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/2.0 target:self selector:@selector(loading) userInfo:nil repeats:YES];
+    
 }
 
 - (void) loading {
     
     if (self.webView.loading) {
-        
-        
+        [self.actInd startAnimating];
+    }else{
+        [self.actInd stopAnimating];
     }
     
 }

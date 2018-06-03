@@ -593,7 +593,8 @@
                         <viewLayoutGuide key="safeArea" id="vg9-MX-QPF"/>
                     </view>
                     <connections>
-                        <outlet property="activity" destination="MBV-Ui-cpy" id="bSq-tS-I5S"/>
+                        <outlet property="actInd" destination="ZUd-9H-l0R" id="b9H-o9-PcR"/>
+                        <outlet property="activity" destination="eqr-rw-qQe" id="YVE-8R-Rg2"/>
                         <outlet property="webView" destination="eqr-rw-qQe" id="0Lm-Uz-HuH"/>
                     </connections>
                 </viewController>
