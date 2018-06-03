@@ -356,6 +356,9 @@
                                         <state key="normal" title="E-mail Us">
                                             <color key="titleColor" red="0.024256381970691483" green="0.20966658222571363" blue="0.60279711787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="OAQ-Ac-GLQ" kind="show" id="tok-ee-GrE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-L6-8HF">
                                         <rect key="frame" x="0.0" y="214.5" width="335" height="48.5"/>
@@ -378,13 +381,10 @@
                             <constraint firstItem="mQ0-Rv-GQl" firstAttribute="top" secondItem="eAu-83-2zP" secondAttribute="top" id="Hyb-OZ-N4C"/>
                             <constraint firstItem="mQ0-Rv-GQl" firstAttribute="trailing" secondItem="eAu-83-2zP" secondAttribute="trailing" id="IRa-kw-6c8"/>
                             <constraint firstItem="q3P-Do-Bwd" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" id="MK4-bZ-amJ"/>
-                            <constraint firstAttribute="trailing" secondItem="7CI-C8-U5C" secondAttribute="trailing" constant="-24" id="W5t-u0-0Md"/>
                             <constraint firstItem="q3P-Do-Bwd" firstAttribute="bottom" secondItem="eAu-83-2zP" secondAttribute="bottom" id="WGm-Hz-LJy"/>
                             <constraint firstAttribute="trailing" secondItem="7CI-C8-U5C" secondAttribute="trailing" constant="20" id="WgD-86-pq3"/>
                             <constraint firstItem="q3P-Do-Bwd" firstAttribute="top" secondItem="eAu-83-2zP" secondAttribute="top" id="Xy2-on-RdZ"/>
-                            <constraint firstItem="7CI-C8-U5C" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" constant="16" id="jzZ-QI-nmY"/>
                             <constraint firstItem="mQ0-Rv-GQl" firstAttribute="trailing" secondItem="eAu-83-2zP" secondAttribute="trailing" id="kDG-jQ-abf"/>
-                            <constraint firstItem="eAu-83-2zP" firstAttribute="bottom" secondItem="7CI-C8-U5C" secondAttribute="bottom" constant="138" id="lI3-Yh-7tm"/>
                             <constraint firstItem="q3P-Do-Bwd" firstAttribute="trailing" secondItem="eAu-83-2zP" secondAttribute="trailing" id="oaF-fw-rpC"/>
                             <constraint firstItem="mQ0-Rv-GQl" firstAttribute="top" secondItem="eAu-83-2zP" secondAttribute="top" id="smA-dU-Xdq"/>
                             <constraint firstItem="mQ0-Rv-GQl" firstAttribute="leading" secondItem="eAu-83-2zP" secondAttribute="leading" id="ycQ-oT-8Zs"/>
@@ -405,6 +405,113 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNQ-S9-uNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8" y="-593.25337331334333"/>
+        </scene>
+        <!--Email View Controller-->
+        <scene sceneID="Csa-Ez-WVa">
+            <objects>
+                <viewController id="OAQ-Ac-GLQ" customClass="EmailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rSf-4Q-3yV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="R3a-TM-033">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fsO-cr-Yor">
+                                <rect key="frame" x="15" y="8" width="345" height="170"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6L-UG-mMG">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwK-nw-0fr">
+                                        <rect key="frame" x="0.0" y="35" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="dismissKeyboard:" destination="OAQ-Ac-GLQ" eventType="editingDidEndOnExit" id="HAj-eV-WxU"/>
+                                            <action selector="dismissKeyboard:" destination="OAQ-Ac-GLQ" eventType="editingDidEnd" id="fmJ-o5-S6T"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9u-tu-mDM">
+                                        <rect key="frame" x="0.0" y="70" width="345" height="30"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tru-6K-OkI">
+                                        <rect key="frame" x="0.0" y="105" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="dismissKeyboard:" destination="OAQ-Ac-GLQ" eventType="editingDidEnd" id="UNi-jV-iTb"/>
+                                            <action selector="dismissKeyboard:" destination="OAQ-Ac-GLQ" eventType="editingDidEndOnExit" id="sdz-9q-3Kp"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ5-e4-RyX">
+                                        <rect key="frame" x="0.0" y="140" width="345" height="30"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbu-bd-P5u">
+                                <rect key="frame" x="16" y="296" width="343" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="FVv-Mp-IsX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="0.024256381970000001" green="0.20966658220000001" blue="0.60279711790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="send:" destination="OAQ-Ac-GLQ" eventType="touchUpInside" id="8mi-za-5tO"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T2y-7e-vEb">
+                                <rect key="frame" x="16" y="186" width="343" height="102"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="g9a-cg-ayo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="48X-yv-Pnt" firstAttribute="trailing" secondItem="fsO-cr-Yor" secondAttribute="trailing" constant="15" id="08f-Av-WsX"/>
+                            <constraint firstItem="fsO-cr-Yor" firstAttribute="top" secondItem="48X-yv-Pnt" secondAttribute="top" constant="8" id="3er-Fh-kfv"/>
+                            <constraint firstItem="T2y-7e-vEb" firstAttribute="leading" secondItem="48X-yv-Pnt" secondAttribute="leading" constant="16" id="CSZ-Zj-q83"/>
+                            <constraint firstItem="R3a-TM-033" firstAttribute="leading" secondItem="48X-yv-Pnt" secondAttribute="leading" id="FT0-3N-Lcl"/>
+                            <constraint firstItem="48X-yv-Pnt" firstAttribute="trailing" secondItem="T2y-7e-vEb" secondAttribute="trailing" constant="16" id="Ic9-Do-Ryw"/>
+                            <constraint firstItem="R3a-TM-033" firstAttribute="bottom" secondItem="48X-yv-Pnt" secondAttribute="bottom" id="OhG-v2-zaO"/>
+                            <constraint firstItem="R3a-TM-033" firstAttribute="top" secondItem="48X-yv-Pnt" secondAttribute="top" id="YDd-Gx-lg3"/>
+                            <constraint firstItem="gbu-bd-P5u" firstAttribute="leading" secondItem="48X-yv-Pnt" secondAttribute="leading" constant="16" id="YrR-t9-e9p"/>
+                            <constraint firstItem="T2y-7e-vEb" firstAttribute="top" secondItem="fsO-cr-Yor" secondAttribute="bottom" constant="8" id="Z3y-gA-MPJ"/>
+                            <constraint firstItem="fsO-cr-Yor" firstAttribute="leading" secondItem="48X-yv-Pnt" secondAttribute="leading" constant="15" id="Zsd-es-4cK"/>
+                            <constraint firstItem="R3a-TM-033" firstAttribute="trailing" secondItem="48X-yv-Pnt" secondAttribute="trailing" id="eBX-Zm-Mt0"/>
+                            <constraint firstItem="gbu-bd-P5u" firstAttribute="top" secondItem="T2y-7e-vEb" secondAttribute="bottom" constant="8" id="olt-5R-6FY"/>
+                            <constraint firstItem="48X-yv-Pnt" firstAttribute="trailing" secondItem="gbu-bd-P5u" secondAttribute="trailing" constant="16" id="zgr-mS-xhr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="48X-yv-Pnt"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="Tru-6K-OkI" id="ao4-LL-hD4"/>
+                        <outlet property="messageField" destination="T2y-7e-vEb" id="IVS-UJ-ZNF"/>
+                        <outlet property="nameField" destination="YwK-nw-0fr" id="bH5-Cr-IUm"/>
+                        <outlet property="sendButton" destination="gbu-bd-P5u" id="dl1-ZU-8SM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6Q-MX-Na8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2306" y="-585"/>
         </scene>
         <!--About Us-->
         <scene sceneID="TiZ-hl-zAk">

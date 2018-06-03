@@ -42,6 +42,8 @@
     self.emailUs.layer.cornerRadius =5;
     self.socialLinks.layer.cornerRadius =5;
     
+    [[self navigationItem] setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
