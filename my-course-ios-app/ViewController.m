@@ -24,6 +24,8 @@
     self.ContactButton.layer.cornerRadius = 5;
     self.SocialButton.layer.cornerRadius = 5;
     
+    [[self navigationItem] setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
+    
 }
 
 

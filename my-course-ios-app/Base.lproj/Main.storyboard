@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,6 +83,7 @@
                                         </state>
                                         <connections>
                                             <action selector="Social:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tb2-rc-pKt"/>
+                                            <segue destination="DaJ-ZD-QMJ" kind="show" id="jsw-Eu-Ld0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -367,6 +369,9 @@
                                         <state key="normal" title="Social Links">
                                             <color key="titleColor" red="0.024256381970691483" green="0.20966658222571363" blue="0.60279711787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="DaJ-ZD-QMJ" kind="show" id="VEp-lp-gim"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -512,6 +517,158 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6Q-MX-Na8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2306" y="-585"/>
+        </scene>
+        <!--Social View Controller-->
+        <scene sceneID="WVO-D5-HkO">
+            <objects>
+                <viewController id="uc9-v7-0AT" customClass="SocialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DZM-oU-wi4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7T-Mq-DN8">
+                                <rect key="frame" x="0.0" y="510" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="4U3-4P-jei">
+                                        <color key="tintColor" red="0.024256381970000001" green="0.20966658220000001" blue="0.60279711790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="stopLoading:" destination="eqr-rw-qQe" id="pjI-5W-Q1B"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="refresh" id="Sti-RQ-glF">
+                                        <color key="tintColor" red="0.024256381970000001" green="0.20966658220000001" blue="0.60279711790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="reload:" destination="eqr-rw-qQe" id="HqH-nZ-Cf5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HIo-Ev-p38">
+                                        <color key="tintColor" red="0.024256381970000001" green="0.20966658220000001" blue="0.60279711790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="rewind" id="tOb-ZO-GE6">
+                                        <color key="tintColor" red="0.024256381970000001" green="0.20966658220000001" blue="0.60279711790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="eqr-rw-qQe" id="RkO-Mh-VGk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="02g-9q-WDy">
+                                        <color key="tintColor" red="0.024256381970000001" green="0.20966658220000001" blue="0.60279711790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="goForward:" destination="eqr-rw-qQe" id="hwP-3L-dSH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqr-rw-qQe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZUd-9H-l0R">
+                                <rect key="frame" x="177" y="267" width="20" height="20"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="top" secondItem="vg9-MX-QPF" secondAttribute="top" id="1Uj-oQ-ahz"/>
+                            <constraint firstItem="P7T-Mq-DN8" firstAttribute="bottom" secondItem="vg9-MX-QPF" secondAttribute="bottom" id="35d-pz-5zP"/>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="leading" secondItem="P7T-Mq-DN8" secondAttribute="leading" id="4ho-H4-3BY"/>
+                            <constraint firstItem="P7T-Mq-DN8" firstAttribute="trailing" secondItem="vg9-MX-QPF" secondAttribute="trailing" id="Lvv-af-Caf"/>
+                            <constraint firstItem="ZUd-9H-l0R" firstAttribute="centerY" secondItem="DZM-oU-wi4" secondAttribute="centerY" id="MBV-Ui-cpy"/>
+                            <constraint firstItem="P7T-Mq-DN8" firstAttribute="leading" secondItem="vg9-MX-QPF" secondAttribute="leading" id="NfK-mQ-Rqy"/>
+                            <constraint firstAttribute="trailing" secondItem="eqr-rw-qQe" secondAttribute="trailing" id="O6C-kY-j3V"/>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="leading" secondItem="vg9-MX-QPF" secondAttribute="leading" id="bi0-n3-TFY"/>
+                            <constraint firstItem="P7T-Mq-DN8" firstAttribute="top" secondItem="eqr-rw-qQe" secondAttribute="bottom" id="byH-SX-cdn"/>
+                            <constraint firstItem="ZUd-9H-l0R" firstAttribute="centerX" secondItem="DZM-oU-wi4" secondAttribute="centerX" id="d93-qN-J4T"/>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="top" secondItem="vg9-MX-QPF" secondAttribute="top" id="i03-DY-Gso"/>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="trailing" secondItem="P7T-Mq-DN8" secondAttribute="trailing" id="ixr-a3-cnr"/>
+                            <constraint firstItem="P7T-Mq-DN8" firstAttribute="bottom" secondItem="vg9-MX-QPF" secondAttribute="bottom" id="mCb-gB-we2"/>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="trailing" secondItem="vg9-MX-QPF" secondAttribute="trailing" id="q98-O8-gf0"/>
+                            <constraint firstItem="eqr-rw-qQe" firstAttribute="leading" secondItem="DZM-oU-wi4" secondAttribute="leading" id="uvf-NV-4sa"/>
+                            <constraint firstItem="P7T-Mq-DN8" firstAttribute="top" secondItem="eqr-rw-qQe" secondAttribute="bottom" id="wS5-33-hIi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vg9-MX-QPF"/>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="MBV-Ui-cpy" id="bSq-tS-I5S"/>
+                        <outlet property="webView" destination="eqr-rw-qQe" id="0Lm-Uz-HuH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTB-hX-XlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3981.5999999999999" y="-593.25337331334333"/>
+        </scene>
+        <!--Social Table View Controller-->
+        <scene sceneID="0gY-pL-tdh">
+            <objects>
+                <tableViewController id="DaJ-ZD-QMJ" customClass="SocialTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uMd-W0-Lop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="75" id="zH2-U6-BH1" customClass="SocialTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zH2-U6-BH1" id="bBN-zu-gHF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="r5N-18-ibW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SocialIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="igx-jd-lY2">
+                                            <rect key="frame" x="8" y="8" width="59" height="59"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="igx-jd-lY2" secondAttribute="height" multiplier="1:1" id="14I-d8-Ll4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN2-iM-hG7">
+                                            <rect key="frame" x="75" y="8" width="292" height="59"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="kN2-iM-hG7" secondAttribute="trailing" constant="8" id="1b1-Kg-ysg"/>
+                                        <constraint firstItem="igx-jd-lY2" firstAttribute="leading" secondItem="bBN-zu-gHF" secondAttribute="leading" constant="8" id="4Xw-cN-ia0"/>
+                                        <constraint firstAttribute="trailing" secondItem="r5N-18-ibW" secondAttribute="trailing" id="EdE-OS-70i"/>
+                                        <constraint firstItem="r5N-18-ibW" firstAttribute="top" secondItem="bBN-zu-gHF" secondAttribute="top" id="MD1-jk-c2M"/>
+                                        <constraint firstItem="igx-jd-lY2" firstAttribute="leading" secondItem="bBN-zu-gHF" secondAttribute="leading" constant="8" id="PqE-dP-cjx"/>
+                                        <constraint firstAttribute="bottom" secondItem="kN2-iM-hG7" secondAttribute="bottom" constant="7.5" id="XHZ-ev-t1E"/>
+                                        <constraint firstAttribute="bottom" secondItem="igx-jd-lY2" secondAttribute="bottom" constant="7.5" id="Yx6-lU-76r"/>
+                                        <constraint firstItem="igx-jd-lY2" firstAttribute="top" secondItem="bBN-zu-gHF" secondAttribute="top" constant="8" id="YyW-XV-077"/>
+                                        <constraint firstAttribute="bottom" secondItem="kN2-iM-hG7" secondAttribute="bottom" constant="7.5" id="Z3R-h6-KV9"/>
+                                        <constraint firstItem="kN2-iM-hG7" firstAttribute="top" secondItem="bBN-zu-gHF" secondAttribute="top" constant="8" id="alc-LY-1XW"/>
+                                        <constraint firstItem="kN2-iM-hG7" firstAttribute="leading" secondItem="igx-jd-lY2" secondAttribute="trailing" constant="8" id="bDx-Rt-3EO"/>
+                                        <constraint firstItem="kN2-iM-hG7" firstAttribute="top" secondItem="bBN-zu-gHF" secondAttribute="top" constant="8" id="bZF-Rj-Moq"/>
+                                        <constraint firstAttribute="bottom" secondItem="r5N-18-ibW" secondAttribute="bottom" id="jYT-5I-OLx"/>
+                                        <constraint firstItem="r5N-18-ibW" firstAttribute="leading" secondItem="bBN-zu-gHF" secondAttribute="leading" id="jfw-ZG-Ngf"/>
+                                        <constraint firstItem="igx-jd-lY2" firstAttribute="top" secondItem="bBN-zu-gHF" secondAttribute="top" constant="8" id="tx0-dd-cTU"/>
+                                        <constraint firstAttribute="trailing" secondItem="kN2-iM-hG7" secondAttribute="trailing" constant="8" id="x3W-oU-zyl"/>
+                                        <constraint firstAttribute="bottom" secondItem="igx-jd-lY2" secondAttribute="bottom" constant="7.5" id="yW3-uf-SiG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="image" destination="igx-jd-lY2" id="bXo-uA-M06"/>
+                                    <outlet property="label" destination="kN2-iM-hG7" id="xIL-Cw-XgA"/>
+                                    <segue destination="uc9-v7-0AT" kind="show" identifier="showSocialDetail" id="kt2-li-28y"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DaJ-ZD-QMJ" id="DpT-h3-Bgd"/>
+                            <outlet property="delegate" destination="DaJ-ZD-QMJ" id="fwi-Aj-LX1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xrW-Ut-UTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3264.8000000000002" y="-593.25337331334333"/>
         </scene>
         <!--About Us-->
         <scene sceneID="TiZ-hl-zAk">
@@ -687,10 +844,14 @@
         <image name="Background" width="2560" height="1600"/>
         <image name="Image1" width="300" height="168"/>
         <image name="Logo" width="526" height="448"/>
+        <image name="SocialIcon1" width="512" height="512"/>
         <image name="Tab1" width="30" height="30"/>
         <image name="Tab2" width="30" height="30"/>
         <image name="Tab3" width="30" height="30"/>
         <image name="Tab4" width="30" height="30"/>
         <image name="Tab5" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VEp-lp-gim"/>
+    </inferredMetricsTieBreakers>
 </document>
