@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1527B82220C363AB0081255C /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1527B82120C363AB0081255C /* ContactViewController.m */; };
 		1527B82520C365160081255C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1527B82420C365160081255C /* MapKit.framework */; };
+		1527B82820C3683C0081255C /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1527B82720C3683C0081255C /* MapPin.m */; };
 		4B59049920B4E17F00CB942D /* PortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B59049820B4E17F00CB942D /* PortfolioViewController.m */; };
 		4BC5E3CC20A8FDE2009A63AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3CB20A8FDE2009A63AD /* AppDelegate.m */; };
 		4BC5E3CF20A8FDE2009A63AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5E3CE20A8FDE2009A63AD /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		1527B82020C363AB0081255C /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		1527B82120C363AB0081255C /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		1527B82420C365160081255C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1527B82620C3683C0081255C /* MapPin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		1527B82720C3683C0081255C /* MapPin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 		4B59049720B4E17F00CB942D /* PortfolioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PortfolioViewController.h; sourceTree = "<group>"; };
 		4B59049820B4E17F00CB942D /* PortfolioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortfolioViewController.m; sourceTree = "<group>"; };
 		4BC5E3C720A8FDE2009A63AD /* my-course-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-course-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +106,8 @@
 			children = (
 				1527B82020C363AB0081255C /* ContactViewController.h */,
 				1527B82120C363AB0081255C /* ContactViewController.m */,
+				1527B82620C3683C0081255C /* MapPin.h */,
+				1527B82720C3683C0081255C /* MapPin.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				4BC5E3D520A8FDE2009A63AD /* my_course_ios_app.xcdatamodeld in Sources */,
 				1527B82220C363AB0081255C /* ContactViewController.m in Sources */,
 				4BC5E3DD20A8FDE2009A63AD /* main.m in Sources */,
+				1527B82820C3683C0081255C /* MapPin.m in Sources */,
 				4BC5E3CC20A8FDE2009A63AD /* AppDelegate.m in Sources */,
 				4BE79ED020AE3B4700568274 /* ServiceTableViewController.m in Sources */,
 				4BE79ED320AE3B7700568274 /* ServiceTableViewCell.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "ContactViewController.h"
+#import "MapPin.h"
 
 @interface ContactViewController ()
 
@@ -30,6 +31,11 @@
     region.center = location;
     
     [self.mapView setRegion:region animated:YES];
+    
+    MapPin *ann =  [[MapPin alloc] init];
+    ann.coordinate = location;
+    
+    [self.mapView addAnnotation:ann];
     
 }
 
